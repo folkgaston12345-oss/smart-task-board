@@ -1,78 +1,71 @@
-/* จัดการให้เนื้อหาทั้งหมดอยู่กึ่งกลางหน้าจอ */
+/* ล้างค่าเริ่มต้น */
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+/* 1. จัดการพื้นหลังและดึงเนื้อหามากึ่งกลางหน้าจอ */
 .app-page {
   display: flex;
   justify-content: center; /* กึ่งกลางแนวนอน */
-  align-items: flex-start; /* เริ่มจากด้านบนแต่เว้นระยะ */
+  align-items: flex-start; /* เริ่มจากด้านบน */
   min-height: 100vh;
-  padding-top: 60px;
-  background-color: #1a1a1a; /* พื้นหลังสีเข้ม */
+  padding-top: 50px; /* เว้นระยะจากขอบบน */
+  background-color: #1a1a1a; /* สีพื้นหลังมืดแบบในรูป */
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: white;
   width: 100%;
 }
 
+/* 2. คอนเทนเนอร์หลัก (กล่องสีเหลี่ยมกึ่งกลาง) */
 .task-board-container {
   width: 90%;
-  max-width: 550px; /* จำกัดความกว้างเพื่อให้ดูเป็นระเบียบ */
-  margin: 0 auto;
+  max-width: 550px;
+  background-color: transparent;
 }
 
 h1 {
   text-align: center;
-  font-size: 2.5rem;
   margin-bottom: 30px;
-  letter-spacing: 1px;
+  font-size: 2.5rem;
 }
 
-/* สไตล์ฟอร์มเพิ่มงาน */
+/* 3. ฟอร์มเพิ่มงาน */
 .task-form {
   display: flex;
-  gap: 8px;
+  gap: 10px;
   margin-bottom: 30px;
 }
 
-.task-form input, 
-.task-form select, 
-.task-form button {
-  padding: 12px;
+.task-form input, .task-form select, .task-form button {
+  padding: 10px;
   border-radius: 6px;
   border: 1px solid #333;
   background-color: #2a2a2a;
   color: white;
-  font-size: 14px;
 }
 
 .task-form input { flex: 2; }
 .task-form select { flex: 1; cursor: pointer; }
-
 .task-form button {
   background-color: #2ecc71;
   border: none;
   font-weight: bold;
   cursor: pointer;
-  transition: background-color 0.2s;
 }
 
-.task-form button:hover {
-  background-color: #27ae60;
-}
-
-/* รายการงานแต่ละชิ้น */
+/* 4. รายการงานแต่ละชิ้น */
 .task-item {
   background-color: white;
   color: black;
-  padding: 18px;
+  padding: 15px;
   margin-bottom: 15px;
   border-radius: 12px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.4);
-  transition: transform 0.2s;
-}
-
-.task-item:hover {
-  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
 
 /* สีขอบข้างตามระดับความสำคัญ */
@@ -80,33 +73,5 @@ h1 {
 .priority-Medium { border-left: 10px solid #f39c12; }
 .priority-Low { border-left: 10px solid #2ecc71; }
 
-.task-info-main { 
-  font-weight: bold; 
-  font-size: 1.15rem; 
-  margin-bottom: 4px;
-}
-
-.task-info-sub { 
-  font-size: 0.9rem; 
-  color: #666; 
-  display: flex;
-  gap: 10px;
-}
-
-.task-actions {
-  display: flex;
-  gap: 15px;
-}
-
-.task-actions button {
-  border: none;
-  background: none;
-  cursor: pointer;
-  font-size: 1.4rem;
-  padding: 0;
-  transition: opacity 0.2s;
-}
-
-.task-actions button:hover {
-  opacity: 0.7;
-}
+.task-info-main { font-weight: bold; font-size: 1.1rem; }
+.task-info-sub { font-size: 0.9rem; color: #666; margin-top: 4px; }
