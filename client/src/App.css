@@ -1,32 +1,21 @@
-/* ล้างค่าเริ่มต้นเพื่อให้การจัดกึ่งกลางแม่นยำ */
-* {
-  box-sizing: border-box;
-}
-
-body, html {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  height: 100%;
-}
-
-/* 1. จัดหน้ากระดาษให้อยู่กึ่งกลางหน้าจอพอดี */
+/* จัดการหน้ากระดาษให้อยู่กึ่งกลางหน้าจอ */
 .app-page {
   display: flex;
-  justify-content: center; /* จัดกึ่งกลางแนวนอน */
+  justify-content: center; /* กึ่งกลางแนวนอน */
   align-items: flex-start; /* เริ่มวางจากด้านบน */
   min-height: 100vh;
   width: 100vw;
   background-color: #1a1a1a; /* สีพื้นหลังมืด */
-  padding-top: 60px; /* ระยะห่างจากขอบบน */
+  padding-top: 60px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: white;
+  margin: 0;
 }
 
-/* 2. คอนเทนเนอร์หลักที่ควบคุมความกว้างของ Task Board */
+/* คอนเทนเนอร์หลักควบคุมความกว้าง */
 .task-board-container {
   width: 90%;
-  max-width: 500px; /* จำกัดความกว้างไม่ให้แผ่กว้างเกินไป */
+  max-width: 500px;
   margin: 0 auto;
 }
 
@@ -36,7 +25,7 @@ h1 {
   font-size: 2.5rem;
 }
 
-/* 3. สไตล์ฟอร์มเพิ่มงาน */
+/* สไตล์ฟอร์มเพิ่มงาน */
 .task-form {
   display: flex;
   gap: 10px;
@@ -58,14 +47,9 @@ h1 {
   border: none;
   font-weight: bold;
   cursor: pointer;
-  transition: background-color 0.2s;
 }
 
-.task-form button:hover {
-  background-color: #27ae60;
-}
-
-/* 4. รายการงานแต่ละชิ้น */
+/* รายการงานแต่ละชิ้น */
 .task-item {
   background-color: white;
   color: black;
@@ -78,10 +62,10 @@ h1 {
   box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
 
-/* สีขอบข้างตามระดับความสำคัญ (Priority) */
-.priority-High { border-left: 10px solid #e74c3c; }
-.priority-Medium { border-left: 10px solid #f39c12; }
-.priority-Low { border-left: 10px solid #2ecc71; }
+/* --- ส่วนสำคัญ: Priority Tag Colors --- */
+.priority-High { border-left: 10px solid #e74c3c !important; }   /* แดง */
+.priority-Medium { border-left: 10px solid #f39c12 !important; } /* ส้ม */
+.priority-Low { border-left: 10px solid #2ecc71 !important; }    /* เขียว */
 
 .task-info-main { font-weight: bold; font-size: 1.1rem; }
 .task-info-sub { font-size: 0.9rem; color: #666; margin-top: 4px; }
