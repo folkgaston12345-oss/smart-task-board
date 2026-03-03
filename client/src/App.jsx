@@ -66,7 +66,6 @@ function App() {
 
         <div className="task-list">
           {tasks.map(task => (
-            /* ดึงค่า task.priority มาสร้าง class เช่น priority-High เพื่อแสดงสี */
             <div key={task._id} className={`task-item priority-${task.priority}`}>
               <div>
                 <div className="task-info-main" style={{ 
@@ -76,7 +75,9 @@ function App() {
                   {task.title}
                 </div>
                 <div className="task-info-sub">
-                  <span>📂 {task.category}</span> | <span>🔥 {task.priority}</span>
+                  <span>📂 {task.category}</span> | 
+                  {/* เพิ่ม class text-ตามด้วยระดับความสำคัญเพื่อให้ตัวหนังสือเปลี่ยนสี */}
+                  <span className={`text-${task.priority}`}> 🔥 {task.priority}</span>
                 </div>
               </div>
               <div className="task-actions">

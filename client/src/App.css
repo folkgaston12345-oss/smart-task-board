@@ -82,3 +82,8 @@ h1 {
   font-size: 1.5rem;
   padding: 0;
 }
+
+/* สีตัวอักษรสำหรับ Priority Tag */
+.text-High { color: #e74c3c; font-weight: bold; }   /* แดง */
+.text-Medium { color: #f39c12; font-weight: bold; } /* เหลือง/ส้ม */
+.text-Low { color: #2ecc71; font-weight: bold; }    /* เขียว */
